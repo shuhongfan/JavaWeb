@@ -2,6 +2,7 @@ package com.shf.util;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.*;
 import java.util.Properties;
 
@@ -16,7 +17,11 @@ public class JDBCUtils {
 //        1.创建properties集合类
         Properties pro = new Properties();
 //        2.加载文件
-        pro.load(new FileReader("src/jdbc.properties"));
+//        获取src路径下的文件的方式 classLoader类加载器
+        ClassLoader classLoader = JDBCUtils.class.getClassLoader();
+        URL res = classLoader.getResource("jdbc.properties");
+        String path = res.getPath();
+        pro.load(new FileReader(path));
 //        3.获取数据 赋值
         url = pro.getProperty("url");
         user = pro.getProperty("user");

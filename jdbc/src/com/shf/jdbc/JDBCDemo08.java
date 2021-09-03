@@ -9,7 +9,7 @@ import java.util.List;
 
 public class JDBCDemo08 {
     public static void main(String[] args) {
-        List<Emp> empList = new JDBCDemo08().findAll();
+        List<Emp> empList = new JDBCDemo08().findAll2();
         for (Emp emp : empList) {
             System.out.println(emp);
         }
