@@ -9,19 +9,18 @@ public class Emp {
   private int mgr;
   private Date join;
   private double salary;
+  private double bonus;
   private int dept_id;
 
-  public Emp(int id, String ename, int job_id, int mgr, Date join, double salary, int dept_id) {
+  public Emp(int id, String ename, int job_id, int mgr, Date join, double salary, double bonus, int dept_id) {
     this.id = id;
     this.ename = ename;
     this.job_id = job_id;
     this.mgr = mgr;
     this.join = join;
     this.salary = salary;
+    this.bonus = bonus;
     this.dept_id = dept_id;
-  }
-
-  public Emp() {
   }
 
   @Override
@@ -33,8 +32,12 @@ public class Emp {
             ", mgr=" + mgr +
             ", join=" + join +
             ", salary=" + salary +
+            ", bonus=" + bonus +
             ", dept_id=" + dept_id +
             '}';
+  }
+
+  public Emp() {
   }
 
   public int getId() {
@@ -83,6 +86,14 @@ public class Emp {
 
   public void setSalary(double salary) {
     this.salary = salary;
+  }
+
+  public double getBonus() {
+    return bonus;
+  }
+
+  public void setBonus(double bonus) {
+    this.bonus = bonus;
   }
 
   public int getDept_id() {
