@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var reg=new RegExp("\w{6,12}");
+    var reg2=/w{6,12}/;
+    console.log(reg2)
+
+    var username="zhangsan";
+    var flag=reg2.test(username)
+    console.log(flag)
+
+    var str="传智播客";
+    var encode=encodeURI(str);
+    document.write(encode)
+</script>
+</body>
+</html>

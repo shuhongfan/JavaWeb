@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" onclick="false">
+    <input type="text" id="username">
+    <input type="submit" value="提交">
+</form>
+
+<script>
+    let username = document.getElementById("username");
+    username.onmousedown = function (e) {
+        console.log(e.button)
+    }
+    username.onchange = function (e) {
+        console.log(e)
+    }
+    function check() {
+        return false;
+    }
+</script>
+</body>
+</html>

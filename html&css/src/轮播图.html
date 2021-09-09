@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <img id="img" src="img/banner_1.jpg" alt="">
+    <script>
+        var number=1;
+        var img=document.getElementById("img")
+        function changeBGC() {
+            number++;
+            img.src="img/banner_"+number+".jpg"
+            if (number==3) number=1;
+        }
+        setInterval(changeBGC,3000)
+
+
+    </script>
+</body>
+</html>

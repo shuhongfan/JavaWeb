@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3> <span id="sec">5</span>秒之后， 自动跳转到首页</h3>
+    <script>
+        var sec=document.getElementById("sec")
+        var time=5;
+        function reduceTime() {
+            sec.innerText=time
+            time--;
+            if (time<=0){
+                clearInterval(inter)
+                location.href='https://www.baidu.com';
+            }
+        }
+        var inter=setInterval(reduceTime,1000)
+    </script>
+</body>
+</html>

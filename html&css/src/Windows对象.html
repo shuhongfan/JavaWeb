@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input id="openBtn" type="button" value="打开窗口">
+    <input type="button" id="closeBtn" value="关闭窗口">
+    <input type="button" id="baidu" value="跳转到百度">
+    <script>
+        var openBtn=document.getElementById("openBtn")
+        var closeBtn=document.getElementById("closeBtn")
+        var newWindow;
+        openBtn.onclick=function () {
+            newWindow=open("http://www.baidu.com");
+        }
+        closeBtn.onclick=function () {
+            newWindow.close();
+        }
+
+        // setTimeout("alert('boooo~~~')",3000)
+
+        function fun() {
+            alert("boom~~~~")
+        }
+        // setTimeout(fun,3000)
+
+        var id=setInterval(fun,2000)
+        clearInterval(id)
+
+        var href=location.href;
+        console.log(href)
+        
+        var baidu=document.getElementById("baidu")
+        baidu.onclick=function () {
+            location.href='http://baidu.com'
+        }
+    </script>
+</body>
+</html>

@@ -1,5 +1,0 @@
-div 方法出现异常了
-异常的名称：ArithmeticException
-异常的原因：java.lang.ArithmeticException: / by zeronull
----------------------------
-本次一共出现1此异常

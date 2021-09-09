@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<users>
+    <user number="1">
+        <name>zhangsan</name>
+        <age>23</age>
+        <gender>male</gender>
+    </user>
+
+    <user number="2">
+        <name number="2" id="lisi">lisi</name>
+        <age>24</age>
+        <gender>female</gender>
+        <code>
+            <![CDATA[
+                if(a<b && a>c)
+            ]]>
+
+        </code>
+    </user>
+</users>
