@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+    <book sn="SN1215454">
+        <name>时间简史</name>
+        <author>霍金</author>
+        <price>75</price>
+    </book>
+    <book sn="SN1234548486">
+        <name>java从入门到放弃</name>
+        <author>
+            <![CDATA[
+                <<<<<<<<<  沙老师
+            ]]>
+
+        </author>
+        <price>9.9</price>
+    </book>
+    <book sn="SN54456" author="哈哈哈" price="99"/>
+</books>
