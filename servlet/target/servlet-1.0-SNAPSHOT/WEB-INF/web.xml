@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+<!--    context-param是上下文参数 它属于整个web工程-->
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>context</param-value>
+    </context-param>
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>root</param-value>
+    </context-param>
+
+<!--  servelt标签给Tomcat配置servlet-->
+  <servlet>
+<!--    servlet-name标签给servlet程序起一个别名  一般是类名-->
+    <servlet-name>HelloServlet</servlet-name>
+<!--    servlet-class时servlet程序的全类名-->
+    <servlet-class>com.shf.servlet.HelloServlet</servlet-class>
+      <!--        init-param是初始化参数-->
+      <init-param>
+          <!--            参数名-->
+          <param-name>username</param-name>
+          <!--            参数值-->
+          <param-value>root</param-value>
+      </init-param>
+      <!--        init-param是初始化参数-->
+      <init-param>
+          <!--            参数名-->
+          <param-name>password</param-name>
+          <!--            参数值-->
+          <param-value>root</param-value>
+      </init-param>
+  </servlet>
+
+<!--  servlet-mapping标签给servelt程序配置访问地址-->
+  <servlet-mapping>
+<!--    servlet-name标签的作用时告诉服务器，我当前配置的地址给那个servelt程序使用-->
+    <servlet-name>HelloServlet</servlet-name>
+<!--    url-pattern配置访问地址-->
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HelloServlet2</servlet-name>
+        <servlet-class>com.shf.servlet.HelloServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet2</servlet-name>
+        <url-pattern>/hello2</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>HelloServlet3</servlet-name>
+        <servlet-class>com.shf.servlet.HelloServlet3</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet3</servlet-name>
+        <url-pattern>/hello3</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ContextServlet</servlet-name>
+        <servlet-class>com.shf.servlet.ContextServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContextServlet</servlet-name>
+        <url-pattern>/contextServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ContextServlet1</servlet-name>
+        <servlet-class>com.shf.servlet.ContextServlet1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContextServlet1</servlet-name>
+        <url-pattern>/contextServlet1</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ContextServlet2</servlet-name>
+        <servlet-class>com.shf.servlet.ContextServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContextServlet2</servlet-name>
+        <url-pattern>/contextServlet2</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>RequestAPIServlet</servlet-name>
+        <servlet-class>com.shf.servlet.RequestAPIServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RequestAPIServlet</servlet-name>
+        <url-pattern>/requestAPIServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ParameterServlet</servlet-name>
+        <servlet-class>com.shf.servlet.ParameterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ParameterServlet</servlet-name>
+        <url-pattern>/parameterServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet1</servlet-name>
+        <servlet-class>com.shf.servlet.Servlet1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet1</servlet-name>
+        <url-pattern>/servlet1</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet2</servlet-name>
+        <servlet-class>com.shf.servlet.Servlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet2</servlet-name>
+        <url-pattern>/servlet2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ForwardC</servlet-name>
+        <servlet-class>com.shf.servlet.ForwardC</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ForwardC</servlet-name>
+        <url-pattern>/forwardC</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ResponseIOServlet</servlet-name>
+        <servlet-class>com.shf.servlet.ResponseIOServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResponseIOServlet</servlet-name>
+        <url-pattern>/responseIOServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Response1</servlet-name>
+        <servlet-class>com.shf.servlet.Response1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Response1</servlet-name>
+        <url-pattern>/response1</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Response2</servlet-name>
+        <servlet-class>com.shf.servlet.Response2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Response2</servlet-name>
+        <url-pattern>/response2</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.shf.web.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/registerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.shf.web.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrintHtml</servlet-name>
+        <servlet-class>com.shf.servlet.PrintHtml</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PrintHtml</servlet-name>
+        <url-pattern>/printHtml</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SearchStudentServlet</servlet-name>
+        <servlet-class>com.shf.servlet.SearchStudentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchStudentServlet</servlet-name>
+        <url-pattern>/searchStudentServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>com.shf.servlet.UploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/uploadServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DownLoadServlet</servlet-name>
+        <servlet-class>com.shf.servlet.DownLoadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DownLoadServlet</servlet-name>
+        <url-pattern>/downLoadServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>com.shf.web.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/userServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookServlet</servlet-name>
+        <servlet-class>com.shf.web.BookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookServlet</servlet-name>
+        <url-pattern>/manager/bookServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ClientBookServlet</servlet-name>
+        <servlet-class>com.shf.web.ClientBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClientBookServlet</servlet-name>
+        <url-pattern>/client/bookServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CookieServlet</servlet-name>
+        <servlet-class>com.shf.servlet.CookieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CookieServlet</servlet-name>
+        <url-pattern>/cookieServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LoginServletTest</servlet-name>
+        <servlet-class>com.shf.servlet.LoginServletTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServletTest</servlet-name>
+        <url-pattern>/loginServletTest</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SessionServlet</servlet-name>
+        <servlet-class>com.shf.servlet.SessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionServlet</servlet-name>
+        <url-pattern>/sessionServlet</url-pattern>
+    </servlet-mapping>
+
+<!--    表示当前Web工程 创建出来的所有session默认是20分钟的超时时长-->
+    <session-config>
+        <session-timeout>20</session-timeout>
+    </session-config>
+
+<!--    配置监听器-->
+    <listener>
+        <listener-class>com.shf.listener.MyServletContextListenerImpl</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>KaptchaServlet</servlet-name>
+        <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>KaptchaServlet</servlet-name>
+        <url-pattern>/kaptcha.jpg</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>com.shf.web.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/cartServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
