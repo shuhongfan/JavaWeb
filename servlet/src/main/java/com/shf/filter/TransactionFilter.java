@@ -1,0 +1,33 @@
+package com.shf.filter;
+
+import com.shf.utils.JdbcUtils;
+
+import javax.servlet.*;
+import java.io.IOException;
+
+public class TransactionFilter implements Filter {
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+
+    }
+
+    @Override
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+        try {
+            filterChain.doFilter(servletRequest, servletResponse);
+//            提交事务
+            JdbcUtils.commitAndClose();
+        } catch (Exception e) {
+//            回滚事务
+            JdbcUtils.rollbackAndClose();
+            e.printStackTrace();
+//            把异常抛给Tomcat管理展示友好的错误页面
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void destroy() {
+
+    }
+}

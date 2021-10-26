@@ -288,4 +288,107 @@
         <servlet-name>CartServlet</servlet-name>
         <url-pattern>/cartServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>com.shf.web.OrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/orderServlet</url-pattern>
+    </servlet-mapping>
+
+<!--    过滤器-->
+    <filter>
+<!--        过滤器别名-->
+        <filter-name>AdminFilter</filter-name>
+<!--        配置filter的全类名-->
+        <filter-class>com.shf.filter.AdminFilter</filter-class>
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:mysql://localhost:3306/test1</param-value>
+        </init-param>
+    </filter>
+<!--    配置filter的拦截路径-->
+    <filter-mapping>
+<!--        当前的拦截路径给哪个filter使用-->
+        <filter-name>AdminFilter</filter-name>
+<!--        配置拦截路径-->
+<!--        / 表示 http://ip:port/工程路径/  映射到IDEA的web目录-->
+<!--        /admin/*  表示 http://ip:port/工程路径/admin/-->
+<!--        *.html  后缀名匹配-->
+        <url-pattern>/target.jsp</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>LoginFilterServlet</servlet-name>
+        <servlet-class>com.shf.servlet.LoginFilterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginFilterServlet</servlet-name>
+        <url-pattern>/loginFilterServlet</url-pattern>
+    </servlet-mapping>
+
+<!--    过滤器 -->
+<!--    在多个Filter过滤器执行的时候，它们执行的优先顺序是由配置顺序决定的-->
+    <filter>
+        <filter-name>Filter2</filter-name>
+        <filter-class>com.shf.filter.Filter2</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filter2</filter-name>
+        <url-pattern>/target.jsp</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>Filter1</filter-name>
+        <filter-class>com.shf.filter.Filter1</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filter1</filter-name>
+        <url-pattern>/target.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>ManagerFilter</filter-name>
+        <filter-class>com.shf.filter.ManagerFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ManagerFilter</filter-name>
+        <url-pattern>/pages/manager/*</url-pattern>
+        <url-pattern>/manager/bookServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>TransactionFilter</filter-name>
+        <filter-class>com.shf.filter.TransactionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>TransactionFilter</filter-name>
+<!--        当前工程下所有文件-->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+<!--    error-page便签配置，服务器出错之后，自动跳转的页面-->
+    <error-page>
+<!--        error-code 错误类型-->
+        <error-code>500</error-code>
+<!--        location标签表示跳转页面路径-->
+        <location>/pages/error/error500.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/pages/error/error404.jsp</location>
+    </error-page>
+
+    <servlet>
+        <servlet-name>AjaxServlet</servlet-name>
+        <servlet-class>com.shf.servlet.AjaxServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjaxServlet</servlet-name>
+        <url-pattern>/ajaxServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

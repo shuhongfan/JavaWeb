@@ -16,7 +16,9 @@ public class BaseServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        解决请求中文乱码
         req.setCharacterEncoding("UTF-8");
+//        解决响应中文乱码
         resp.setContentType("text/html;charset=UTF-8");
 
         String action = req.getParameter("action");
@@ -26,9 +28,12 @@ public class BaseServlet extends HttpServlet {
             Method method = this.getClass().getDeclaredMethod(action, HttpServletRequest.class, HttpServletResponse.class);
             System.out.println(method);
 //            调用目标业务方法
+            method.setAccessible(true);
             method.invoke(this,req,resp);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
+//            把异常抛给Filter
+            throw new RuntimeException(e);
         }
     }
 }

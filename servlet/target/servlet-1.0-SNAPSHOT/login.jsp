@@ -11,7 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-<form action="loginServletTest" method="post">
+<%--<form action="loginServletTest" method="post">--%>
+<form action="/servlet/loginFilterServlet" method="post">
     用户名： <input type="text" name="username" value="${cookie.username.value}"> <br>
     密码： <input type="password" name="password"> <br>
     <input type="submit" value="登录">

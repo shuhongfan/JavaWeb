@@ -4,6 +4,7 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/servlet/src/main/webapp/b.jsp" value="file://$PROJECT_DIR$/servlet/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/servlet/src/main/webapp/json/Jquery_Ajax_request.html" value="file://$PROJECT_DIR$/servlet/src/main/webapp/json" />
         <entry key="file://$PROJECT_DIR$/servlet/src/main/webapp/outPut.jsp" value="file://$PROJECT_DIR$/servlet/src/main/webapp" />
       </map>
     </option>

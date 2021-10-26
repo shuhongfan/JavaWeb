@@ -19,7 +19,13 @@
             $(".addToCart").click(function () {
                 // attr 设置或获取元素值
                 let bookId = $(this).attr("bookId");
-                location.href="${basePath}cartServlet?action=addItem&id="+ bookId;
+                <%--location.href="${basePath}cartServlet?action=addItem&id="+ bookId;--%>
+
+                $.getJSON("${basePath}cartServlet","action=ajaxAddItem&id="+bookId,function (date) {
+                    console.log(date)
+                    $("#cartTotalCount").text("您的购物车中有"+date.totalCount+"件商品")
+                    $("#cartLastName").text(date.lastName)
+                })
             })
         })
     </script>
@@ -57,15 +63,15 @@
         </div>
         <div style="text-align: center">
             <c:if test="${empty cart.items}">
-                <span>您的购物车中有${cart.totalCount}件商品</span>
+                <span id="cartTotalCount">您的购物车中有${cart.totalCount}件商品</span>
                 <div>
-                    <span style="color: red">当前购物车为空</span>
+                    <span id="cartLastName" style="color: red">当前购物车为空</span>
                 </div>
             </c:if>
             <c:if test="${not empty cart.items}">
-                <span>您的购物车中有${cart.totalCount}件商品</span>
+                <span id="cartTotalCount">您的购物车中有${cart.totalCount}件商品</span>
                 <div>
-                    您刚刚将<span style="color: red">${lastName}</span>加入到了购物车中
+                    您刚刚将<span id="cartLastName" style="color: red">${lastName}</span>加入到了购物车中
                 </div>
             </c:if>
         </div>

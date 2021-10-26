@@ -1,5 +1,6 @@
 package com.shf.web;
 
+import com.google.gson.Gson;
 import com.shf.pojo.User;
 import com.shf.service.UserService;
 import com.shf.service.impl.UserServiceImpl;
@@ -10,12 +11,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
 import static com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY;
 
 public class UserServlet extends BaseServlet {
     private UserService userService = new UserServiceImpl();
+
+    public void ajaxExistsUsername(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException {
+//        获取请求的参数username
+        String username = req.getParameter("username");
+//        调用userService.existsUsername
+        boolean existsUsername = userService.existsUsername(username);
+//        把返回的结果封装成为map对象
+        HashMap<String, Object> resultMap = new HashMap<>();
+        resultMap.put("existsUsername",existsUsername);
+
+        Gson gson = new Gson();
+        String json = gson.toJson(resultMap);
+        resp.getWriter().write(json);
+    }
 
     public void logout(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException {
 //        1.销毁session中用户登录的信息 或者销毁session
